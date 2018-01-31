@@ -47,15 +47,6 @@ public class DemoApplication {
             for (Customer customer : repository.findByLastName("Smith")) {
                 System.out.println(customer);
             }
-
-
-
-           /* MongoClientURI uri = new MongoClientURI(
-							"mongodb://petecknight:adm1n@cluster0-shard-00-00-ukfqz.mongodb.net:27017,cluster0-shard-00-01-ukfqz.mongodb.net:27017,cluster0-shard-00-02-ukfqz.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin");
-
-			MongoClient mongoClient = new MongoClient(uri);
-			MongoDatabase database = mongoClient.getDatabase("test");
-*/
 		};
 	}
 }
