@@ -1,4 +1,4 @@
-package net.knightech.demo.controller;
+package net.knightech.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,15 +9,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import net.knightech.demo.Customer;
-import net.knightech.demo.CustomerRepository;
-
 @RestController
 public class C {
 
-    @Autowired CustomerRepository customerRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
 
-    @Autowired RestTemplate restTemplate;
+    @Autowired
+    private RestTemplate restTemplate;
     
     @GetMapping("/name")
     public Customer getOrSave(@RequestParam(value="name") String name){
