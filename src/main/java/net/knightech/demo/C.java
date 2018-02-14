@@ -20,6 +20,7 @@ public class C {
     
     @GetMapping("/name")
     public Customer getOrSave(@RequestParam(value="name") String name){
+
         Customer customer = customerRepository.findByFirstName(name);
         if(customer==null){
             customer = customerRepository.save(new Customer(name, name));
@@ -34,7 +35,6 @@ public class C {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     class UserNotFoundException extends RuntimeException {
-
         public UserNotFoundException(String userId) {
             super("could not find user '" + userId + "'.");
         }
